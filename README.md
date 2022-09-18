@@ -15,6 +15,7 @@ This repo holds a project for Clemson eye tracking methodologies. The intent is 
 - Right click in file explorer and open git bash here
 - Clone the project down from file explorer
 - Back on UnityHub open the project
+- To see examples of .csv output from eyetracking you can look at the logs folder. There lay some csv of pupil diameter and other stuff. 
 ## How to contribute
 Contact Judsen Hembree via email at jhembre@g.clemson.edu for any questions or feel free to text me @ (864) 506-3011.
 - First please create a branch do not work directly off of dev please.
