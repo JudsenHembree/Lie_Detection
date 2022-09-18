@@ -3,7 +3,7 @@
 This repo holds a project for Clemson eye tracking methodologies. The intent is to use eye tracking to monitor pupil dilation and from there try to guess if someone is lying
 ### Project Structure
 - There is a Data Analysis directory that will home the py scripts that do analysis stuff.
-- All other directories are unity stuff
+- All other directories are unity/sranipal stuff
 ## Getting started
 ### Personal PC (Windows)
 - Download UnityHub, and install the 2021.3.9f1 editor version.
