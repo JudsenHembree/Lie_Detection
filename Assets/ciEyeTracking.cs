@@ -11,7 +11,7 @@ namespace ViveSR.anipal.Eye
         public string PupilLogFile;
         private FocusInfo FocusInfo;
         private readonly GazeIndex[] GazePriority = new GazeIndex[] { GazeIndex.COMBINE, GazeIndex.LEFT, GazeIndex.RIGHT };
-        private static EyeData eyeData = new EyeData();
+        public static EyeData eyeData = new EyeData();
         private bool eye_callback_registered = false;
 
         public bool logToConsole;
@@ -19,7 +19,6 @@ namespace ViveSR.anipal.Eye
         private EyeTrackingLogger logger;
         private void Start()
         {
-            logger = new EyeTrackingLogger(FullLogFile, PupilLogFile);
             if (!SRanipal_Eye_Framework.Instance.EnableEye)
             {
                 enabled = false;
@@ -42,10 +41,6 @@ namespace ViveSR.anipal.Eye
                 SRanipal_Eye.WrapperUnRegisterEyeDataCallback(Marshal.GetFunctionPointerForDelegate((SRanipal_Eye.CallbackBasic)EyeCallback));
                 eye_callback_registered = false;
             }
-
-            debugLog();
-            logger.FullLog(eyeData);
-            logger.PupilLog(eyeData);
         }
         private void Release()
         {
