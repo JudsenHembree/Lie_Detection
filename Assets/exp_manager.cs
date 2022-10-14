@@ -5,6 +5,14 @@ using UnityEngine.Video;
 
 using Random = System.Random;
 
+//TODO:
+    // Loop for audio source time
+    // Create a introduction to set up the experiment
+    // Real question audio
+
+//Nice to haves
+    // Real time
+    // complex questions
 
 public class exp_manager : MonoBehaviour
 {
@@ -14,9 +22,9 @@ public class exp_manager : MonoBehaviour
     public List<AudioClip> audioSources;
     private List<AudioClip> selected;
 
-    public GameObject tv;
     public RenderTexture screen;
 
+    public float answerTime;
     public int desiredLies;
     public string questionStatus;
     private VideoPlayer playingVideo;
@@ -123,13 +131,13 @@ public class exp_manager : MonoBehaviour
         while(!playingVideo.isPrepared){
             yield return null;
         }
-        StartCoroutine(response());
+        StartCoroutine(questioning());
     }
 
-    private IEnumerator response(){
-        Debug.Log("response");
+    private IEnumerator questioning(){
+        Debug.Log("questioning");
         Debug.Log("Playing video is " + playingVideo);
-        questionStatus = "response";
+        questionStatus = "questioning";
         // load screen with right indication
         playingVideo.targetTexture = screen;
         playingVideo.Play();
@@ -146,12 +154,17 @@ public class exp_manager : MonoBehaviour
         while(!playingVideo.isPrepared){
             yield return null;
         }
-        // play question
-
-        // wait for response
-        //yield return new WaitForSeconds(5);
         Debug.Log("returning to baseline");
         questionNumber++;
+        StartCoroutine(response());
+    }
+
+    private IEnumerator response(){
+        float timeleft = answerTime;
+        while(timeleft >= 0.0f){
+            timeleft -= Time.deltaTime;
+            yield return null;
+        }
         StartCoroutine(baseline());
     }
 
@@ -194,10 +207,14 @@ public class exp_manager : MonoBehaviour
 
             //Add AudioSource to  the GameObject
             AudioSource audioSource = vidHolder.AddComponent<AudioSource>();
+            audioSource.mute = true;
 
             //Disable Play on Awake for both Video and Audio
             videoPlayer.playOnAwake = false;
             audioSource.playOnAwake = false;
+
+            //loop for time 
+            videoPlayer.isLooping = true;
 
             //We want to play from video clip not from url
             videoPlayer.source = VideoSource.VideoClip;

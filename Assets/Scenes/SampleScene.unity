@@ -1158,18 +1158,19 @@ MonoBehaviour:
   videos: []
   clips:
   - {fileID: 32900000, guid: e1c5a31a1f35db646a8286afe6692fa8, type: 3}
-  - {fileID: 32900000, guid: 32a3f844ada35764284c4c73777af2b9, type: 3}
-  - {fileID: 32900000, guid: 75d5b52762fc38841815b6a34cce8d6e, type: 3}
-  - {fileID: 32900000, guid: e1c5a31a1f35db646a8286afe6692fa8, type: 3}
+  - {fileID: 32900000, guid: 805081b115b61b34197076b2ac302705, type: 3}
+  - {fileID: 32900000, guid: f43e71ee7244c7d4588eaff0f20cf7f9, type: 3}
+  - {fileID: 32900000, guid: fe6d0ebc7c62a2c4686447ec79c7ed80, type: 3}
   audioSources:
   - {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba, type: 3}
   - {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277, type: 3}
   - {fileID: 8300000, guid: efee776e88902a74684c56ce2962678f, type: 3}
   - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
   - {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979, type: 3}
-  tv: {fileID: 0}
   screen: {fileID: 8400000, guid: 52d1b4b6106843b4d8885a217b85bafc, type: 2}
+  answerTime: 5
   desiredLies: 2
+  questionStatus: 
 --- !u!4 &1971901994
 Transform:
   m_ObjectHideFlags: 0
