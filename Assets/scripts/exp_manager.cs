@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using System.Diagnostics;
+using System.IO;
 
 using Random = System.Random;
+using Debug = UnityEngine.Debug;
 
 //TODO:
     // Create a introduction to set up the experiment
@@ -22,6 +25,7 @@ public class exp_manager : MonoBehaviour
     public List<AudioClip> audioSources;
     public List<AudioClip> practiceAudioSources;
     public AudioSource audioSource;
+    public AudioSource vidaudioSource;
     private List<AudioClip> selected;
     private List<AudioClip> practiceLies;
 
@@ -42,22 +46,17 @@ public class exp_manager : MonoBehaviour
         public const int baseline = 1;
         public const int truth = 2;
         public const int lie = 3;
+        public const int redoPractice = 4;
+        public const int redoBeginning = 5;
     }
 
     void Start()
     {
         questionNumber = 0;
         initVidsList();
-        selected = generateLies(desiredLies);
-        practiceLies = generateLies(practiceLiesCount);
-        StartCoroutine(run_exp());
-        /*
-        string lies = "";
-        foreach(AudioClip item in selected){
-            lies += item + " ";
-        }
-        Debug.Log(lies);
-        */
+        selected = generateLies(desiredLies, audioSources);
+        practiceLies = pgenerateLies(practiceLiesCount, practiceAudioSources);
+        run_exp();
     }
 
     void Update(){
@@ -67,10 +66,17 @@ public class exp_manager : MonoBehaviour
         }
     }
 
-    public IEnumerator run_exp(){
+    public void run_exp(){
         Debug.Log("run exp");
         // setup clip
+        StartCoroutine(beginning());
+    }
+
+    private IEnumerator beginning(){
+        videos[clip.begin].SetTargetAudioSource(0, vidaudioSource);
+        vidaudioSource.mute = false;
         videos[clip.begin].Prepare();
+
         //Wait until this video is prepared
         while (!videos[clip.begin].isPrepared)
         {
@@ -91,22 +97,63 @@ public class exp_manager : MonoBehaviour
             }
             yield return null;
         }
+
         playingVideo.targetTexture = null;
-        playingVideo = videos[clip.baseline];
-        //StartCoroutine(baseline());
-        StartCoroutine(practice());
+        playingVideo = videos[clip.redoBeginning];
+        StartCoroutine(startPractice());
     }
 
-    private IEnumerator researcherInput(){
-        Debug.Log("Repeat practice (n to continue r to repeat)");
-        questionNumber = 0;
+    private IEnumerator startPractice(){
+        Debug.Log("Start practice? (n to continue r to repeat)");
+        playingVideo.SetTargetAudioSource(0, vidaudioSource);
+        playingVideo.isLooping = true;
+        playingVideo.Prepare();
+        while(!playingVideo.isPrepared){
+            yield return null;
+        }
+        playingVideo.targetTexture = screen;
+        playingVideo.Play();
         while(!Input.GetKeyDown("n") && !Input.GetKeyDown("r")){
             yield return null;
         }
         if(Input.GetKeyDown("n")){
+            playingVideo.Stop();
+            playingVideo = videos[clip.baseline];
+            playingVideo.Prepare();
+            questionNumber = 0;
+            StartCoroutine(practice());
+        }
+        if(Input.GetKeyDown("r")){
+            playingVideo.Stop();
+            StartCoroutine(beginning());
+        }
+    }
+
+    private IEnumerator researcherInput(){
+        questionNumber = 0;
+        playingVideo = videos[clip.redoPractice];
+        playingVideo.SetTargetAudioSource(0, vidaudioSource);
+        playingVideo.isLooping = true;
+        playingVideo.Prepare();
+        while(!playingVideo.isPrepared){
+            yield return null;
+        }
+        playingVideo.targetTexture = screen;
+        playingVideo.Play();
+        Debug.Log("Repeat practice (n to continue r to repeat)");
+        while(!Input.GetKeyDown("n") && !Input.GetKeyDown("r")){
+            yield return null;
+        }
+        if(Input.GetKeyDown("n")){
+            playingVideo.Stop();
+            playingVideo = videos[clip.baseline];
+            playingVideo.Prepare();
             StartCoroutine(baseline());
         }
         if(Input.GetKeyDown("r")){
+            playingVideo.Stop();
+            playingVideo = videos[clip.baseline];
+            playingVideo.Prepare();
             StartCoroutine(practice());
         }
     }
@@ -161,6 +208,7 @@ public class exp_manager : MonoBehaviour
         Debug.Log("baseline");
         if(questionNumber > audioSources.Count-1){
             Debug.Log("Its over");
+            Application.Quit();            
             yield break;
         }
         while(!playingVideo.isPrepared){
@@ -220,6 +268,7 @@ public class exp_manager : MonoBehaviour
             }
             yield return null;
         }
+        questionStatus = "response";
         playingVideo.targetTexture = null;
         playingVideo = videos[clip.baseline];
         while(!playingVideo.isPrepared){
@@ -277,7 +326,7 @@ public class exp_manager : MonoBehaviour
         StartCoroutine(practice());
     }
 
-    private List<AudioClip> generateLies(int lieCount){
+    private List<AudioClip> generateLies(int lieCount, List<AudioClip> audioSources){
         Debug.Log("generateLies");
         int k = lieCount; // items to select
         var selected = new List<AudioClip>();
@@ -294,6 +343,23 @@ public class exp_manager : MonoBehaviour
         return selected;
     }
 
+    private List<AudioClip> pgenerateLies(int lieCount, List<AudioClip> practiceAudioSources){
+        Debug.Log("generateLies");
+        int k = lieCount; // items to select
+        var selected = new List<AudioClip>();
+        double needed = k;
+        double available = practiceAudioSources.Count;
+        var rand = new Random();
+        while (selected.Count < k) {
+        if( rand.NextDouble() < needed / available ) {
+            selected.Add(practiceAudioSources[(int)available-1]);
+            needed--;
+        }
+        available--;
+        }
+        return selected;
+    }
+
     private int truthorlie(int clip){
         Debug.Log("truthorlie");
         return selected.Contains(audioSources[clip]) ? 3 : 2;
@@ -301,7 +367,7 @@ public class exp_manager : MonoBehaviour
 
     private int practicetruthorlie(int clip){
         Debug.Log("truthorlie");
-        return practiceLies.Contains(audioSources[clip]) ? 3 : 2;
+        return practiceLies.Contains(practiceAudioSources[clip]) ? 3 : 2;
     }
 
     private void initVidsList(){
@@ -344,4 +410,17 @@ public class exp_manager : MonoBehaviour
             videoPlayer.clip = clips[i];
         }
     }
+
+    private static void ExecProcess(string name)
+    {
+        Process p = new Process();
+        p.StartInfo.FileName = name;
+        p.StartInfo.CreateNoWindow = true;
+        p.StartInfo.UseShellExecute = true;
+        p.Start();
+
+        p.WaitForExit();
+        p.Close();
+    }
 }
+
