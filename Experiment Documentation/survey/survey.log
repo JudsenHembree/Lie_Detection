@@ -1,0 +1,174 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.2)  18 OCT 2022 23:20
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**survey.tex
+(./survey.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip49
+\thanksmargin=\skip50
+\droptitle=\skip51
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count175
+\l__pdf_internal_box=\box45
+) (./survey.aux)
+\openout1 = `survey.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count176
+\scratchdimen=\dimen137
+\scratchbox=\box46
+\nofMPsegments=\count177
+\nofMParguments=\count178
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count179
+\MPscratchDim=\dimen138
+\MPnumerator=\count180
+\makeMPintoPDFobject=\count181
+\everyMPtoPDFconversion=\toks16
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+<./images/Easy-Difficult.png, id=1, 594.22pt x 96.36pt>
+File: ./images/Easy-Difficult.png Graphic file (type png)
+<use ./images/Easy-Difficult.png>
+Package pdftex.def Info: ./images/Easy-Difficult.png  used on input line 26.
+(pdftex.def)             Requested size: 360.0pt x 58.38103pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 26--27
+[][] 
+ []
+
+<./images/fun.png, id=3, 587.19376pt x 89.33376pt>
+File: ./images/fun.png Graphic file (type png)
+<use ./images/fun.png>
+Package pdftex.def Info: ./images/fun.png  used on input line 29.
+(pdftex.def)             Requested size: 360.0pt x 54.76884pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 29--30
+[][] 
+ []
+
+<./images/Agree-Disagree.png, id=4, 606.265pt x 86.3225pt>
+File: ./images/Agree-Disagree.png Graphic file (type png)
+<use ./images/Agree-Disagree.png>
+Package pdftex.def Info: ./images/Agree-Disagree.png  used on input line 32.
+(pdftex.def)             Requested size: 360.0pt x 51.25911pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 32--33
+[][] 
+ []
+
+File: ./images/Agree-Disagree.png Graphic file (type png)
+<use ./images/Agree-Disagree.png>
+Package pdftex.def Info: ./images/Agree-Disagree.png  used on input line 35.
+(pdftex.def)             Requested size: 360.0pt x 51.25911pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 35--36
+[][] 
+ []
+
+File: ./images/Agree-Disagree.png Graphic file (type png)
+<use ./images/Agree-Disagree.png>
+Package pdftex.def Info: ./images/Agree-Disagree.png  used on input line 38.
+(pdftex.def)             Requested size: 360.0pt x 51.25911pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 38--39
+[][] 
+ []
+
+File: ./images/Agree-Disagree.png Graphic file (type png)
+<use ./images/Agree-Disagree.png>
+Package pdftex.def Info: ./images/Agree-Disagree.png  used on input line 41.
+(pdftex.def)             Requested size: 360.0pt x 51.25911pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 41--42
+[][] 
+ []
+
+File: ./images/Agree-Disagree.png Graphic file (type png)
+<use ./images/Agree-Disagree.png>
+Package pdftex.def Info: ./images/Agree-Disagree.png  used on input line 44.
+(pdftex.def)             Requested size: 360.0pt x 51.25911pt.
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 44--45
+[][] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/Easy-Difficult.png> <./images/fun.png> <./images/Agree-Disagree.png>] [2] (./survey.aux) ) 
+Here is how much of TeX's memory you used:
+ 1425 strings out of 483183
+ 19459 string characters out of 5966292
+ 245323 words of memory out of 5000000
+ 16479 multiletter control sequences out of 15000+600000
+ 534175 words of font info for 27 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 30i,4n,25p,211b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/judsen/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/judsen/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on survey.pdf (2 pages, 31369 bytes).
+PDF statistics:
+ 83 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
