@@ -1,5 +1,6 @@
-import sys
-import getopt
+import glob
+import os
+import shutil
 
 
 def test(arg):
@@ -7,18 +8,24 @@ def test(arg):
     f.write("Now the file has more content!")
     f.close()
 
+def listFiles():
+    files = glob.glob("../Data/*.csv", recursive=False)
+    return files
 
-def main(argv):
-    try:
-        opts, args = getopt.getopt(argv, "f:",["file ="])
-    except getopt.GetoptError:
-        print("oh no");
-        sys.exit(-1)
+def move(files):
+    if not os.path.exists("../archives"):
+        os.mkdir("../archives")
 
-    for opt, arg in opts:
-        if opt in ['f', '--file']:
-            print(arg)
-            test(arg)
+    folders = glob.glob("../archives/*/")
+    destination = "../archives/participant_" + str(len(folders))
+    os.mkdir(destination)
+    for file in files:
+        _, tail = os.path.split(file)
+        shutil.copyfile(file, destination + "/" + tail)
+
+def main():
+    files = listFiles()
+    move(files)
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
