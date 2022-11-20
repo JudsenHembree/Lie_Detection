@@ -19,12 +19,14 @@ def move(files):
     folders = glob.glob("../archives/*/")
     destination = "../archives/participant_" + str(len(folders))
     os.mkdir(destination)
+    os.mkdir(destination + "/rawData")
     for file in files:
         _, tail = os.path.split(file)
-        shutil.copyfile(file, destination + "/" + tail)
+        shutil.copyfile(file, destination + "/rawData/" + tail)
 
 def main():
     files = listFiles()
+    print(files)
     move(files)
 
 if __name__ == "__main__":
