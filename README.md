@@ -2,7 +2,8 @@
 ## What this is
 This repo holds a project for Clemson eye tracking methodologies. The intent is to use eye tracking to monitor pupil dilation and from there try to guess if someone is lying
 ### Project Structure
-- There is a Data Analysis directory that will home the py scripts that do analysis stuff.
+- There are python helper scripts located in Assets/pythonscripts. 
+- There are also data repos at Data and Archives.
 - All other directories are unity/sranipal stuff
 ## Getting started
 ### Personal PC (Windows)
