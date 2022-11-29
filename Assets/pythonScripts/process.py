@@ -154,7 +154,7 @@ def processPartialCSV(part, figs, results):
         val = base["status"].values[0]
         val = val.strip()
         val = val.capitalize()
-        if susCoef > .25:
+        if susCoef > .4:
             sus = "Lying"
         else:
             sus = "Truthful"
