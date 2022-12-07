@@ -1,0 +1,4 @@
+--------Best Participant Accuracy with offset-------------------------------------
+-Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
+-           19         |            1          |            0          |     0.95-
+----------------------------------------------------------------------------------
