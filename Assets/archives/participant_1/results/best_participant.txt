@@ -1,4 +1,4 @@
 --------Best Participant Accuracy-------------------------------------------------
 -Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
--           18         |            0          |            2          |     0.9 -
+-           17         |            1          |            2          |     0.85-
 ----------------------------------------------------------------------------------

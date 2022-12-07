@@ -1,14 +1,14 @@
 --------Global Averages Over all Participants-------------------------------------
 -Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
--           12.55      |            6.45       |            1.0        |     0.63-
+-           10.91      |            8.45       |            0.64       |     0.55-
 ----------------------------------------------------------------------------------
 --------Best Participant Accuracy-------------------------------------------------
 -Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
--           18         |            0          |            2          |     0.9 -
+-           17         |            1          |            2          |     0.85-
 ----------------------------------------------------------------------------------
 --------Global Averages Over all Participants w/Offset----------------------------
 -Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
--           13.0       |            6.09       |            0.91       |     0.65-
+-           13.73      |            5.18       |            1.09       |     0.69-
 ----------------------------------------------------------------------------------
 --------Best Participant Accuracy with offset-------------------------------------
 -Total Correct Guesses | Total False Positives | Total False Negatives | Accuracy-
